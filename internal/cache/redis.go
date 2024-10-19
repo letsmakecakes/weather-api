@@ -14,3 +14,7 @@ type WeatherCache interface {
 type cache struct {
 	rdb *redis.Client
 }
+
+func NewCache(rdb *redis.Client) WeatherCache {
+	return &cache{rdb}
+}
