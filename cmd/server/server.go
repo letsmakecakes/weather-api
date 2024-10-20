@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"log"
 	"os"
 	"strconv"
@@ -52,7 +51,7 @@ func main() {
 
 	apiURL := cfg.WeatherThirdPartyAPIURL
 	apiKey := cfg.APIKey
-	ctx := context.Background()
+	ctx := db.CTX
 	routes.SetupRoutes(router, rdb, ctx, apiKey, apiURL)
 
 	log.Printf("Server running on port %s", cfg.Port)
