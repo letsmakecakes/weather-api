@@ -8,7 +8,7 @@ import (
 )
 
 type WeatherCache interface {
-	SetCache(key string, value string, expiration time.Duration) error
+	SetCache(key string, value []byte, expiration time.Duration) error
 	GetCache(key string) (string, error)
 }
 
@@ -25,6 +25,6 @@ func (c *cache) GetCache(key string) (string, error) {
 	return c.rdb.Get(c.ctx, key).Result()
 }
 
-func (c *cache) SetCache(key string, value string, expiration time.Duration) error {
+func (c *cache) SetCache(key string, value []byte, expiration time.Duration) error {
 	return c.rdb.Set(c.ctx, key, value, expiration).Err()
 }
