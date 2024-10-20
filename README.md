@@ -142,13 +142,6 @@ You can run API tests using `curl` or an API testing tool like Postman.
 
 You can also use Postman to simulate the requests and validate responses.
 
-### Running Unit Tests
-
-To run the unit tests for the service, use the following command:
-```bash
-go test ./...
-```
-
 ## Usage
 
 Once the service is running, you can query the weather data for a specific city by sending an HTTP `GET` request to the `/weather/{city}` endpoint. For example:
