@@ -153,7 +153,7 @@ curl http://localhost:8080/weather/London
 The service will first check if the data is available in the Redis cache. If not, it will fetch the data from the third-party weather API and store it in Redis with a 12-hour expiration.
 
 ## System Diagrams
-
+![System Diagram](./system_diagram.png)
 
 ## Contributing
 
