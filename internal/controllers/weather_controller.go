@@ -22,7 +22,7 @@ func (c *WeatherController) GetWeather(ctx *gin.Context) {
 
 	weather, err := c.Service.GetWeather(city)
 	if err != nil {
-		log.Errorf("error getting blog: %v", err)
+		log.Errorf("error getting weather: %v", err)
 		utils.RespondWithError(ctx, http.StatusInternalServerError, "Failed to retreive weather")
 	} else if weather == nil {
 		utils.RespondWithError(ctx, http.StatusNotFound, "Weather not found")
