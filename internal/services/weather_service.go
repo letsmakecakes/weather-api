@@ -42,7 +42,7 @@ func (w *weatherService) GetWeather(city string) (*models.Weather, error) {
 	}
 
 	// if not in cache, fetch from 3rd party API
-	weatherURL := fmt.Sprintf(w.weatherURL+"?location=%s&key=%s", city, w.apiKey)
+	weatherURL := fmt.Sprintf(w.weatherURL+"%s?unitGroup=metric&include=current&key=%s&contentType=json", city, w.apiKey)
 
 	resp, err := http.Get(weatherURL)
 	if err != nil || resp.StatusCode != http.StatusOK {
