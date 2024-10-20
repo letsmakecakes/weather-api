@@ -46,7 +46,7 @@ func (w *weatherService) GetWeather(city string) (*models.Weather, error) {
 
 	resp, err := http.Get(weatherURL)
 	if err != nil || resp.StatusCode != http.StatusOK {
-		return nil, fmt.Errorf("failed to featch weather data")
+		return nil, fmt.Errorf("failed to fetch weather data")
 	}
 	defer resp.Body.Close()
 
